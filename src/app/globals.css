@@ -1,26 +1,78 @@
 @import "tailwindcss";
 
+/* 디자인 토큰: 라이트/다크 각각 지정 (차트 색은 검증된 기본 팔레트 사용) */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  color-scheme: light;
+  --page: #f4f4f2;
+  --surface: #fcfcfb;
+  --line: #e4e3df;
+  --grid: #ebeae6;
+  --ink: #0b0b0b;
+  --ink-2: #52514e;
+  --ink-3: #7c7b76;
+  --series-1: #2a78d6; /* 기본 막대 (파랑) */
+  --series-1-soft: #9ec5f4;
+  --series-2: #eb6834; /* 강조 (주황) */
+  --muted-mark: #c3c2bd; /* 저빈도 */
+  --accent: #0b0b0b;
+  --accent-ink: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --page: #111110;
+    --surface: #1a1a19;
+    --line: #2c2c2a;
+    --grid: #262624;
+    --ink: #f0efec;
+    --ink-2: #c3c2b7;
+    --ink-3: #8f8e86;
+    --series-1: #3987e5;
+    --series-1-soft: #184f95;
+    --series-2: #d95926;
+    --muted-mark: #4a4a46;
+    --accent: #f0efec;
+    --accent-ink: #111110;
   }
 }
 
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #111110;
+  --surface: #1a1a19;
+  --line: #2c2c2a;
+  --grid: #262624;
+  --ink: #f0efec;
+  --ink-2: #c3c2b7;
+  --ink-3: #8f8e86;
+  --series-1: #3987e5;
+  --series-1-soft: #184f95;
+  --series-2: #d95926;
+  --muted-mark: #4a4a46;
+  --accent: #f0efec;
+  --accent-ink: #111110;
+}
+
+@theme inline {
+  --color-page: var(--page);
+  --color-surface: var(--surface);
+  --color-line: var(--line);
+  --color-grid: var(--grid);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-series-1: var(--series-1);
+  --color-series-1-soft: var(--series-1-soft);
+  --color-series-2: var(--series-2);
+  --color-muted-mark: var(--muted-mark);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --font-sans: var(--font-geist-sans), "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --font-mono: var(--font-geist-mono);
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--page);
+  color: var(--ink);
 }
