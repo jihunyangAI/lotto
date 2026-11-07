@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 
 const LINKS = [
   { href: "/", label: "대시보드" },
+  { href: "/recommend", label: "번호 추천" },
   { href: "/draws", label: "당첨번호" },
 ];
 

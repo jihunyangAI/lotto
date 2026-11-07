@@ -5,6 +5,7 @@ import Link from "next/link";
 import type { LottoDraw } from "@/lib/lotto";
 import { average, numberStats, oddEvenStats, rangeStats, sumOf } from "@/lib/analysis";
 import Ball from "./ball";
+import AiAnalysis from "./ai-analysis";
 import {
   Card,
   FrequencyChart,
@@ -188,6 +189,9 @@ export default function Dashboard({ draws, updatedAt }: { draws: LottoDraw[]; up
       <Card title="최근 10회차 상세" subtitle="홀짝, 합계, 구간별 개수, 연속번호 여부">
         <RecentTable draws={recent10} />
       </Card>
+
+      {/* AI 분석 */}
+      <AiAnalysis />
     </div>
   );
 }
